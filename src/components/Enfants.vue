@@ -11,7 +11,7 @@
           {{$index + 1 }}
         </li>
       </ul>
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 46.44"  class="line">
+      <svg class="line" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 46.44" >
         <polyline class="beat" points="0 33.57 575 33.57 585 3.57 595 43.57 600 33.57 1280 33.57"/>
       </svg>
     </div>
@@ -22,21 +22,21 @@
 export default {
   data () {
     return {
-      // note: changing this line won't causes changes
-      // with hot-reload because the reloaded component
-      // preserves its current state and we are modifying
-      // its initial state.
-      msg: 'Foo!',
       children: new Array(6)
     }
   },
   methods: {
     selectNumber: function (index, event) {
       let child = document.querySelectorAll('.child')
+
+      // remove any grown text
       for (let i = 0; i < this.children.length; i++) {
         child[i].classList.remove('grow')
       }
+      // grow the clicked one
       child[index].classList.add('grow')
+
+      // translate the SVG the desired place
       let delta = child[1].offsetLeft - child[0].offsetLeft
       document.querySelector('.line').style.transform = `translateX(${index * delta - 900}px)`
     }
@@ -46,27 +46,21 @@ export default {
 
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-.line{
+<style lang="scss" scoped>
+svg.line{
   position: absolute;
   top: 100px;
   left: 0;
   width: 2000px;
   transition: all .3s ease-in-out;
+  .beat{
+    fill:none;
+    stroke:#003881;
+    stroke-miterlimit:10;
+    stroke-width:2px;
+  }
+}
 
-}
-.beat{
-  fill:none;
-  stroke:#003881;
-  stroke-miterlimit:10;
-  stroke-width:2px;
-}
-ul{
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: space-between;
-  width: 100%;
-}
 .choice{
   position: relative;
   width: 100%;
@@ -75,12 +69,18 @@ ul{
   padding-top: 50px;
   margin: auto;
   overflow: hidden;
-}
-li.child{
-  transition: all .3s ease-out;
-  cursor: pointer;
-  padding: 10px;
-  user-select: none;
+  ul{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    width: 100%;
+    li.child{
+      transition: all .3s ease-out;
+      cursor: pointer;
+      padding: 10px;
+      user-select: none;
+    }
+  }
 }
 .grow{
   transform: scale(3);
@@ -100,6 +100,7 @@ li.child{
 }
 .fade-leave {
   visibility: hidden;
+  opacity: 0;
   display: none;
 }
 </style>

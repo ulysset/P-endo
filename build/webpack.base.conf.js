@@ -80,6 +80,8 @@ module.exports = {
     formatter: require('eslint-friendly-formatter')
   },
   vue: {
-    loaders: utils.cssLoaders()
+    loaders: {
+      'scss': 'vue-style!css!sass'
+    }
   }
 }
