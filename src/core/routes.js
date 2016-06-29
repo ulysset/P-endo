@@ -7,13 +7,13 @@ Vue.use(Router)
 const router = new Router()
 router.map({
   '/': {
-    component: require('components/Hello.vue')
+    component: require('components/Home.vue')
   },
-  '/foo': {
-    component: require('components/Foo.vue')
+  '/enfants': {
+    component: require('components/Enfants.vue')
   },
-  '/bar': {
-    component: require('components/Bar.vue')
+  '/dommage': {
+    component: require('components/Dommage.vue')
   }
   // '/country/:key': {
   //   component: require('components/country')

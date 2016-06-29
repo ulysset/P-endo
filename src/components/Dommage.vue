@@ -2,6 +2,8 @@
   <p>
     Baaaaar
   </p>
+  <a v-link="{ path: '/'}">Home</a>
+  <a v-link="{ path: '/foo'}">Foo</a>
 </template>
 
 <script>
