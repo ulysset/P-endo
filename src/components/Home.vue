@@ -1,6 +1,7 @@
 <template>
   <div class="container" transition="shrink">
     <h1>Stérilité Programmée</h1>
+    <h2>Baseline trop cool à trouver vraiment </h2>
     <a v-link="{ path: '/enfants'}" class="begin-button">
       Commencez l'expérience
     </a>
@@ -27,12 +28,18 @@ export default {
   .container{
     width: 100%;
     height: 100%;
-    background-color: coral;
+    background-image: url('../assets/images/bg_home.png');
+    background-size: cover;
   }
   h1{
     padding-top: 30%;
     text-align: center;
     font-size: 2rem;
+    font-family: 'Montserrat', sans-serif;
+  }
+  h2 {
+    font-family: 'Lora', serif;
+    text-align: center;
   }
   a.begin-button{
     background: lightcyan;
@@ -42,12 +49,15 @@ export default {
     padding: 30px;
     margin: 50px auto 0 auto;
     text-align: center;
+    font-family: 'Source Sans Pro', sans-serif;
+    text-transform: uppercase;
   }
   h4{
     position: absolute;
     bottom: 20px;
     left: 50%;
     transform: translateX(-50%);
+    font-family: 'Source Sans Pro', sans-serif;
   }
 
   .shrink-transition {
