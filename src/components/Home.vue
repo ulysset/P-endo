@@ -1,9 +1,9 @@
 <template>
   <div class="container" transition="shrink">
     <h1>Stérilité Programmée</h1>
-    <h2>Baseline trop cool à trouver vraiment </h2>
+    <h2>Baseline trop cool à trouver vraiment</h2>
     <a v-link="{ path: '/enfants'}" class="begin-button">
-      Commencez l'expérience
+      Démarrer l'expérience
     </a>
     <h4 transition="comeup">Branchez vos écouteurs</h4>
   </div>
@@ -25,25 +25,31 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+
   .container{
     width: 100%;
     height: 100%;
     background-image: url('../assets/images/bg_home.png');
     background-size: cover;
+    color: white;
   }
   h1{
-    padding-top: 30%;
+    padding-top: 25%;
     text-align: center;
-    font-size: 2rem;
+    font-size: 3.5rem;
+    text-transform: uppercase;
     font-family: 'Montserrat', sans-serif;
   }
   h2 {
+    padding-top: 1%;
     font-family: 'Lora', serif;
     text-align: center;
+    font-size: 1.5rem;
   }
   a.begin-button{
-    background: lightcyan;
+   /*  background: lightcyan; */
     display: block;
+    font-size: 1rem;
     width: 60%;
     max-width: 200px;
     padding: 30px;
@@ -51,6 +57,8 @@ export default {
     text-align: center;
     font-family: 'Source Sans Pro', sans-serif;
     text-transform: uppercase;
+    text-decoration: none;
+    color: white;
   }
   h4{
     position: absolute;
