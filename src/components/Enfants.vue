@@ -7,7 +7,7 @@
     <a v-link="{ path: '/bar'}">Bar</a>
     <div class="choice">
       <ul>
-        <li class="child" v-for="child in children" track-by="$index" v-on:click="greet($index, $event)">
+        <li class="child" v-for="child in children" track-by="$index" v-on:click="selectNumber($index, $event)">
           {{$index + 1 }}
         </li>
       </ul>
@@ -31,12 +31,14 @@ export default {
     }
   },
   methods: {
-    greet: function (index, event) {
+    selectNumber: function (index, event) {
       let child = document.querySelectorAll('.child')
       for (let i = 0; i < this.children.length; i++) {
         child[i].classList.remove('grow')
       }
       child[index].classList.add('grow')
+      let delta = child[1].offsetLeft - child[0].offsetLeft
+      document.querySelector('.line').style.transform = `translateX(${index * delta - 900}px)`
     }
   }
 }
@@ -47,8 +49,10 @@ export default {
 <style scoped>
 .line{
   position: absolute;
-  left: -300px;
+  top: 100px;
+  left: 0;
   width: 2000px;
+  transition: all .3s ease-in-out;
 
 }
 .beat{
@@ -60,19 +64,23 @@ export default {
 ul{
   display: flex;
   flex-flow: row nowrap;
-  justify-content: space-around;
-  width: 1000px;
+  justify-content: space-between;
+  width: 100%;
 }
 .choice{
   position: relative;
-  width: 1000px;
+  width: 100%;
+  max-width: 1000px;
   height: 300px;
+  padding-top: 50px;
   margin: auto;
   overflow: hidden;
-  background-color: lightcyan;
 }
-.child{
+li.child{
   transition: all .3s ease-out;
+  cursor: pointer;
+  padding: 10px;
+  user-select: none;
 }
 .grow{
   transform: scale(3);
