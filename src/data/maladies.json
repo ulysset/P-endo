@@ -1,0 +1,56 @@
+ [
+        {
+          "class_name": "endometriose",
+          "title": "Endométriose",
+          "subtitle": "Une maladie qui touche une femme sur dix",
+          "description": "L’endométriose est une maladie gynécologique fréquente, on la reconnaît à la présence de tissu utérin en dehors de la cavité utérine. Cette maladie provoque des douleurs et l’infertilité. On admet classiquement que 20 à 50 % des patientes qui consultent pour une infertilité ont une endométriose et que 30 à 40 % des patientes qui ont une endométriose ont aussi un problème d’infertilité."
+        },
+        {
+          "class_name": "testicules",
+          "title": "Cancer des testicules",
+          "subtitle": "En augmentation de 400% depuis les années 1950",
+          "description": "C'est un cancer rare mais est en augmentation depuis plusieurs décennies. On compte en France chaque année près de 2 000 cancers du testicule. Frappant généralement avant 40 ans, cette maladie représente près d'un tiers des cancers de l'homme jeune."
+        },
+        {
+          "class_name": "sperm",
+          "title": "Baisse du nombre de spermatozoïdes",
+          "subtitle": "Concentration en diminution de 32.2% en 15 ans",
+          "description": "La concentration du sperme des hommes de 35 ans a diminué de 32,2 % entre 1989 et 2005, soit de près de 2 % par an. Durant cette période de 17 ans, le nombre de spermatozoïdes est passé de 73,6 millions/ml de sperme à 49,9 millions/ml en moyenne. Parallèlement, la proportion de spermatozoïdes normaux a chuté de 33,4 %. Parmi les causes on retrouve : le stress, le tabac, l’alcool, la pollution, les médicaments, l’alimentation et l'âge."
+        },
+        {
+          "class_name": "malformation",
+          "title": "Malformation génital",
+          "subtitle": "En augmentation de 400% depuis les années 1950",
+          "description": "L'anomalie génitale est un trouble ou une malformation affectant les organes génitaux chez l'homme (internes ou externes) ou chez la femme. Les types d'anomalies sont divers et peuvent être identifiés dès la naissance, notamment dans le cas d'origines génétiques. On observe une augmentation de ces malformations au cours de ces dernières années."
+        },
+        {
+          "class_name": "sdt",
+          "title": "SDT(Syndrome de dysgénésie testiculaire)",
+          "subtitle": "En augmentation de 400% depuis les années 1950",
+          "description": "Le syndrome de dysgénésie testiculaire ou SDT est un syndrome associant chez les sujets masculins au moins deux des anomalies suivantes : pénis mal formé, pénis anormalement petit, testicule non descendu. L'incidence aurait doublé dans les pays développés depuis 1970, suggérant très fortement l'existence d'une cause environnementale."
+        },
+        {
+          "class_name": "breast",
+          "title": "Cancer du sein",
+          "subtitle": "En augmentation de 400% depuis les années 1950",
+          "description": "5 à 10 % des cancers du sein sont des formes héréditaires, c’est-à-dire attribuables à une mutation génétique transmise par un parent. Il représente 1 à 3% des cancers de l’appareil génital féminin. On observe environ 53 000 cas par an ainsi que 11 500 décès."
+        },
+        {
+          "class_name": "vagina",
+          "title": "Cancer du vagin",
+          "subtitle": "En augmentation de 400% depuis les années 1950",
+          "description": "Les enfants du Distilbène, en particulier les filles exposés in utero, peuvent présenter des anomalies bénignes des organes génitaux qui peuvent saigner mais évoluent favorablement. Beaucoup plus rarement, dans environ 1 cas pour 1 000 femmes, peut survenir, entre 15 et 25 ans, un cancer du vagin qui est alors un adénocarcinome à cellules claires du vagin."
+        },
+        {
+          "class_name": "ovary",
+          "title": "Cancer des ovaires",
+          "subtitle": "En augmentation de 400% depuis les années 1950",
+          "description": "Actuellement, près de 4 000 nouveaux cas par an sont diagnostiqués en France. Dans la plupart des cas, ce cancer concerne les femmes de plus de 45 ans. Il se manifeste surtout entre 60 et 70 ans."
+        },
+        {
+          "class_name": "uteru",
+          "title": "Cancer de l’utérus",
+          "subtitle": "En augmentation de 400% depuis les années 1950",
+          "description": "Huitième cancer de la femme en France, le cancer du col de l'utérus touche près de 3 400 femmes chaque année et près de 1 000 en décèdent durant la même période."
+        }
+      ]
