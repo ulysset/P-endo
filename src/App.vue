@@ -16,12 +16,12 @@
   figure, figcaption, footer, header, hgroup,
   menu, nav, output, ruby, section, summary,
   time, mark, audio, video {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    font-size: 100%;
-    font: inherit;
-    vertical-align: baseline;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
   }
   /* HTML5 display-role reset for older browsers */
   article, aside, details, figcaption, figure,
@@ -31,13 +31,14 @@
   body {
     line-height: 1;
     position: relative;
-    min-width: 100vw;
-    min-height: 100vh;
     width: 100%;
-    height: 100%;
+   height: 100%;
+   overflow: hidden;
   }
   html {
+    background-color: black;
     height: 100%;
+    overflow: hidden;
   }
   ol, ul {
     list-style: none;
@@ -55,4 +56,11 @@
     border-spacing: 0;
   }
   a{text-decoration: none;}
+  h1{
+    text-transform: uppercase;
+    font-family: 'Montserrat', sans-serif;
+  }
+  h2 {
+    font-family: 'Lora', serif;
+  }
 </style>

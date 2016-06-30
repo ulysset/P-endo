@@ -2,7 +2,7 @@
 	<div class="content" transition="fade">
 	    <video v-bind="src:vid_src"></video>
 	    <a v-link="{ path: '/'}">Home</a>
-  		<a v-link="{ path: '/foo'}">Foo</a>
+  		<a v-link="{ path: '/maladies'}">Maladies</a>
 	</div>
   
 </template>

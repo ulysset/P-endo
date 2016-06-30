@@ -15,8 +15,8 @@ router.map({
   '/dommage': {
     component: require('components/Dommage.vue')
   },
-  '/intro': {
-    component: require('components/Intro.vue')
+  '/maladies': {
+    component: require('components/Maladies.vue')
   }
   // '/country/:key': {
   //   component: require('components/country')

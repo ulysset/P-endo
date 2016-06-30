@@ -5,7 +5,7 @@
 	      <h1>Vous n'en aurez pas.</h1>
 	    </div>
 	    <a v-link="{ path: '/'}">Home</a>
-  		<a v-link="{ path: '/intro'}">Suite (vidéo intro)</a>
+  		<a v-link="{ path: '/video_intro'}">Suite (vidéo intro)</a>
 	</div>
   
 </template>
@@ -25,12 +25,9 @@
 	    padding-top: 2%;
 	    text-align: center;
 	    font-size: 3.5rem;
-	    text-transform: uppercase;
-	    font-family: 'Montserrat', sans-serif;
 	  }
 	  h2 {
 	    padding-top: 20%;
-	    font-family: 'Lora', serif;
 	    text-align: center;
 	    font-size: 1.5rem;
 	  }

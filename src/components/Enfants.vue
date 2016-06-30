@@ -59,12 +59,9 @@ h1{
     padding-top: 20%;
     text-align: center;
     font-size: 3.5rem;
-    text-transform: uppercase;
-    font-family: 'Montserrat', sans-serif;
   }
   h2 {
     padding-top: 1%;
-    font-family: 'Lora', serif;
     text-align: center;
     font-size: 1.5rem;
   }
