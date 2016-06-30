@@ -35,11 +35,14 @@ export default {
   methods: {
     openSection: function (index, event) {
       let sections = document.querySelectorAll('.section')
+      let container = document.querySelector('.container')
       for (let i = 0; i <= this.sections.length; i++) {
         sections[i].classList.remove('openned')
       }
       // Open the selected one
       sections[index].classList.add('openned')
+      let result = (-30)*(index)+15
+      container.style.transform = "translateX("+result+"vw)";
       this.sourceAudio = 'http://jrlherm.com/webdoc/audio/testimony_'+this.sections[index].class_name+'.mp3'
     },
     backgroundImage: function(index){
@@ -54,6 +57,26 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss" scoped>
+  .shrink-transition {
+    transition: all .8s cubic-bezier(0,1,1,1);
+    overflow: hidden;
+    opacity: 1;
+    transform: scale(1);
+  }
+  .shrink-enter, .shrink-leave {
+    opacity: 0;
+    display: block;
+    transform: scale(.8);
+  }
+
+  .comeup-transition {
+    transition: all .8s cubic-bezier(0,1,1,1);
+    transform: translate(-50%, 0px);
+    transition-delay: 2s;
+  }
+  .comeup-enter, .comeup-leave {
+    transform: translate(-50%, 40px);
+  }
 
   .container{
     display: block;
@@ -64,7 +87,7 @@ export default {
     /* overflow-x: scroll; */
   /*   overflow-x: hidden; */
     overflow-y: hidden; 
-   transform: translateX(-140px);
+/* transform: translateX(-15vw); */
   }
 
   a {
@@ -138,26 +161,6 @@ export default {
     line-height: 25px;
   }
 
-  .shrink-transition {
-    transition: all .8s cubic-bezier(0,1,1,1);
-    overflow: hidden;
-    opacity: 1;
-    transform: scale(1);
-  }
-  .shrink-enter, .shrink-leave {
-    opacity: 0;
-    display: block;
-    transform: scale(.8);
-  }
-
-  .comeup-transition {
-    transition: all .8s cubic-bezier(0,1,1,1);
-    transform: translate(-50%, 0px);
-    transition-delay: 2s;
-  }
-  .comeup-enter, .comeup-leave {
-    transform: translate(-50%, 40px);
-  }
   .all_time{
     width: 100vw;
     position: sticky;
