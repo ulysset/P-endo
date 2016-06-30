@@ -41,7 +41,6 @@ export default {
       // Open the selected one
       sections[index].classList.add('openned')
       this.sourceAudio = 'http://jrlherm.com/webdoc/audio/testimony_'+this.sections[index].class_name+'.mp3'
-      console.log(this.sourceAudio);
     },
     backgroundImage: function(index){
       return 'http://jrlherm.com/webdoc/photos/bg'+(index+1)+'.jpg'
@@ -62,8 +61,10 @@ export default {
     width:340vw;
     color: white;
     position: absolute;
-    overflow-x: scroll;
+    /* overflow-x: scroll; */
+  /*   overflow-x: hidden; */
     overflow-y: hidden; 
+   transform: translateX(-140px);
   }
 
   a {
@@ -159,6 +160,6 @@ export default {
   }
   .all_time{
     width: 100vw;
-    position: absolute;
+    position: sticky;
   }
 </style>

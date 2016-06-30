@@ -3,7 +3,7 @@
   <div class="all_time">
     <img class="play_button" v-bind:src="play_or_pause" alt="#" v-on:click="play"/>
     <div class="timeline" v-on:click="changeTime">
-      <div class="line"></div>
+      <div class="progress-bar"></div>
     </div>
   </div>
 </template>
@@ -17,19 +17,21 @@ export default {
   },
   props: ['src'],
   ready() {
-		let line = document.querySelector('.timeline .line')
+		let bar = document.querySelector('.progress-bar')
 		let player = document.querySelector('.intro-audio')
+    player.currentTime = 0
 		// Cursor position
 		window.setInterval(function(){
 			// Count the percentage passed
 			let percent = (player.currentTime / player.duration) * 100
+      /*console.log(percent);*/
 			// Update position of the line
 
-			line.style.transform = `translateX(${percent}%)`
-      if (player.currentTime >= player.duration)
-        this.$router.route.go('/')
+			bar.style.transform = `translateX(${percent}%)`
+      if (player.currentTime >= player.duration){
+        /*this.$route.router.go('/')*/
+      }
 		},100);
-    console.log(this);
 	},
   methods : {
 		play : function(){
@@ -45,12 +47,12 @@ export default {
     },
 		changeTime : function(event){
 			let timeline = document.querySelector('.timeline')
-			let line = document.querySelector('.timeline .line')
+			let bar = document.querySelector('.progress-bar')
 			let player = document.querySelector('.intro-audio')
 			// Count the percentage where the cursor is
 			let percent = event.clientX / timeline.offsetWidth * 100
 			player.currentTime = player.duration * percent/100
-			line.style.transform = `translateX(${percent}%)`;
+			bar.style.transform = `translateX(${percent}%)`;
 		}
 	},
   components: {}
@@ -70,7 +72,7 @@ export default {
     width: 100%;
     height: 10px;
     background-color: grey;
-    .line{
+    .progress-bar{
       transition: all .2s cubic-bezier(0,1,1,1);
       position: absolute;
       right: 100%;
