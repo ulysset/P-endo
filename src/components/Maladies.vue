@@ -48,9 +48,9 @@ export default {
     backgroundImage: function(index){
       return 'http://jrlherm.com/webdoc/photos/bg'+(index+1)+'.jpg'
     },
-    mouse : function (event){  
+    /*mouse : function (event){  
       var delta=event.detail? event.detail*(-120) : event.wheelDelta; this.scrollLeft -= delta;    
-    }
+    }*/
   }
 }
 </script>
@@ -147,6 +147,7 @@ export default {
     text-align: center;
   }
 
+  
   .section h1 {
     font-size: 1.5rem;
   }
@@ -154,6 +155,16 @@ export default {
     padding-top: 20px;
     font-size: 0.9rem;
   }
+
+  .continuer .titles {
+    width: 12vw;
+    margin-right: 16vw;
+    text-align: left;
+  }
+  .continuer .titles h1 {
+    font-size: 1rem
+  }
+
 
   .section .contents p {
     font-size: 16px;
