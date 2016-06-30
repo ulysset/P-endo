@@ -15,8 +15,11 @@ router.map({
   '/dommage': {
     component: require('components/Dommage.vue')
   },
-  '/intro': {
-    component: require('components/Intro.vue')
+  '/video_intro': {
+    component: require('components/video_intro.vue')
+  },
+  '/chiffres_chimique': {
+    component: require('components/chiffres_chimique.vue')
   }
   // '/country/:key': {
   //   component: require('components/country')
