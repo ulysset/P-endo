@@ -32,8 +32,9 @@
     line-height: 1;
     position: relative;
     width: 100%;
-   height: 100%;
-   overflow: hidden;
+    height: 100%;
+    overflow: hidden;
+    height: 100%;
   }
   html {
     background-color: black;

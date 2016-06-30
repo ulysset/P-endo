@@ -1,17 +1,19 @@
 <template lang="html">
 	<div class="content" transition="fade">
-	    <video v-bind="src:vid_src"></video>
-	    <a v-link="{ path: '/'}">Home</a>
-  		<a v-link="{ path: '/maladies'}">Maladies</a>
+		<video controls preload="none">
+			<source :src="videourl" type="video/mp4">
+		</video>
+    	<a v-link="{ path: '/'}">Home</a>
+		<a v-link="{ path: '/maladies'}">Maladies</a>
 	</div>
-  
+
 </template>
 
 <script>
 export default {
   data () {
     return {
-      vid_src: '../assets/videos/introduction.mp4'
+      videourl: './assets/videos/introduction.mp4'
     }
   }
 }
