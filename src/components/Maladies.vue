@@ -1,6 +1,6 @@
 <template>
   <div class="container" transition="shrink">
-    <div v-for="section in sections" class="section {{ section.class_name }}" track-by="$index" style="background-image: url('http://jrlherm.com/webdoc/photos/bg{{$index +1}}.jpg')" v-on:click="openSection($index , $event)">
+    <div v-for="section in sections" class="section {{ section.class_name }}" track-by="$index" :style="{'background-image': 'url('+ backgroundImage($index) + ')'}" v-on:click="openSection($index , $event)">
       <div class="titles">
         <h1>{{section.title}}</h1>
         <h2>{{section.subtitle}}</h2>
@@ -9,7 +9,7 @@
         <p>{{section.description}}</p>
       </div>
     </div>
-    <a v-link="{ path: '/'}">
+    <a v-link="{ path: '/video_constats'}">
     <div class="section continuer openned" style="background-image: url('http://jrlherm.com/webdoc/photos/bg10.jpg')">
       <div class="titles">
         <h1>Continuer</h1>
@@ -18,15 +18,18 @@
     </div>
     </a>
   </div>
+  <audioplayer v-bind:src="sourceAudio"></audioplayer>
 </template>
 
-<script>
+<script scoped>
 import sections from '../data/maladies.json'
-
+import Vue from 'vue'
+Vue.component('audioplayer', require('./audioPlayer'))
 export default {
   data () {
     return {
-      sections
+      sections,
+      sourceAudio: ''
     }
   },
   methods: {
@@ -37,7 +40,14 @@ export default {
       }
       // Open the selected one
       sections[index].classList.add('openned')
-      console.log(event)
+      this.sourceAudio = 'http://jrlherm.com/webdoc/audio/testimony_'+this.sections[index].class_name+'.mp3'
+      console.log(this.sourceAudio);
+    },
+    backgroundImage: function(index){
+      return 'http://jrlherm.com/webdoc/photos/bg'+(index+1)+'.jpg'
+    },
+    mouse : function (event){  
+      var delta=event.detail? event.detail*(-120) : event.wheelDelta; this.scrollLeft -= delta;    
     }
   }
 }
@@ -68,10 +78,8 @@ export default {
     width:30vw;
     display: block;
     float:left;
-    background-color: red;
     cursor: pointer;
-    &:hover{
-      background-color: blue;
+    &:hover {
     };
     .contents {
       opacity: 0;
@@ -95,7 +103,6 @@ export default {
       width: 400px;
       text-align: center;
       transform: translateY(50vh);
-      /* background-color: rgba(0,0,0,0.3); */
 
     }
     .titles {
@@ -149,5 +156,9 @@ export default {
   }
   .comeup-enter, .comeup-leave {
     transform: translate(-50%, 40px);
+  }
+  .all_time{
+    width: 100vw;
+    position: absolute;
   }
 </style>
