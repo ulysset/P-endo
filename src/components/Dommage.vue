@@ -25,7 +25,7 @@ export default {
       			/*console.log(this.$route);
 	        	this.router.go('/')*/
 	        	/*this.$route.router.go('/')*/
-	        	this.$route.router.redirect('/video_intro')
+	        	/*this.$route.router.redirect('/video_intro')*/
 	      }
 		},100);
 	},

@@ -38,10 +38,13 @@ router.map({
   },
   '/constats': {
     component: require('components/constats.vue')
-  }
-  // '/country/:key': {
-  //   component: require('components/country')
-  // }
+  },
+  '/societe': {
+    component: require('components/societe.vue')
+  }/*,
+  '/conclusion': {
+    component: require('components/conclusion.vue')
+  }*/
 })
 router.redirect({
   '*': '/'
