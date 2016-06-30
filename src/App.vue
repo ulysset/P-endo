@@ -33,8 +33,7 @@
     position: relative;
     width: 100%;
     height: 100%;
-    overflow-y: hidden;
-    /* overflow-x: auto; */
+    overflow-y: auto;
     overflow-x: hidden;
     height: 100%;
   }

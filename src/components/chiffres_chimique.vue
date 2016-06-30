@@ -47,11 +47,11 @@
     		<video src="http://jrlherm.com/webdoc/videos/chemicals_3.mp4" class="video_3"  onmouseover="this.play()" onmouseout="this.pause()"></video>
     	</div>
 
+		<a v-link="{ path: '/PE'}">
     	<div class="grid-item grid-item--width4 grid-item--height2 block_6">
 			<img src="http://jrlherm.com/webdoc/svg/right-arrow.svg" class="image_continu">
-
     	</div>
-
+		</a>
 	</div>
 </template>
 
@@ -80,7 +80,10 @@ export default {
 
 * { box-sizing: border-box; }
 
-body { font-family: sans-serif; }
+body { 
+	font-family: sans-serif;
+	overflow-y:scroll !important;
+}
 
 /* ---- grid ---- */
 

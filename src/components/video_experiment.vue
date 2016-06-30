@@ -67,10 +67,10 @@ export default {
     position: fixed;
       top: 50%;
       left: 50%;
-      min-width: 100%;
-      min-height: 100%;
-      width: auto;
-      height: auto;
+     min-width: 100%;
+     min-height: 100%;
+     width: auto;
+     height: auto;
       transform: translateX(-50%) translateY(-50%);
       background-size: cover;
   }

@@ -4,8 +4,7 @@
 	      <h2>Quoi qu'il en soit ...</h2>
 	      <h1>Vous n'en aurez pas.</h1>
 	    </div>
-	    <a v-link="{ path: '/'}">Home</a>
-  		<a v-link="{ path: '/video_intro'}">Suite (vidéo intro)</a>
+  		<a v-link="{ path: '/video_intro'}"></a>
   		<audioplayer src="http://jrlherm.com/webdoc/audio/intro_part2.mp3"></audioplayer>
 	</div>
 	
@@ -15,7 +14,24 @@
 <script scoped>
 import Vue from 'vue'
 Vue.component('audioplayer', require('./audioPlayer'))
-export default {}
+export default {
+	data(){
+		return{}
+	},
+	ready() {
+		let the_audio = document.querySelector('audio');
+		window.setInterval(function(){
+      		if (the_audio.currentTime >= the_audio.duration){
+      			/*console.log(this.$route);
+	        	this.router.go('/')*/
+	        	/*this.$route.router.go('/')*/
+	        	this.$route.router.redirect('/video_intro')
+	      }
+		},100);
+	},
+	methods: {
+	}
+}
 </script>
 
 <style lang="css" scoped>
@@ -36,4 +52,11 @@ export default {}
 	    text-align: center;
 	    font-size: 1.5rem;
 	  }
+	  a {
+		  position: absolute;
+		  top: 0px;
+		  left: 0px;
+		  width: 100px;
+		  height: 100px;
+		}
 </style>

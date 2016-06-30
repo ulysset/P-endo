@@ -33,7 +33,7 @@ export default {
   },
   computed: {
     currentBackground: function() {
-      return `http://jrlherm.com/webdoc/photos/bg_pe_${this.currentIndex + 1}.jpg`
+      return 'http://jrlherm.com/webdoc/photos/bg_pe_${this.currentIndex + 1}.jpg'
     },
     doDark: function (index) {
       if (index == this.currentIndex) {

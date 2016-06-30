@@ -5,7 +5,7 @@
     <a v-link="{ path: '/enfants'}" class="begin-button">
       Démarrer l'expérience
     </a>
-    <h4 transition="comeup">Branchez vos écouteurs</h4>
+    <h4>Ce projet ayant été réalisé dans le cadre de la pédagogie d’HETIC, nous n’avons pas acquis les droits de ces fichiers.</h4>
   </div>
 </template>
 
@@ -57,11 +57,14 @@ export default {
     color: white;
   }
   h4{
+    font-size: 13px;
+    color: rgba(255,255,255,0.5);
     position: absolute;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
+    bottom: 15px;
+    width: 100%;
+    text-align: center;
     font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 300;
   }
 
   .shrink-transition {

@@ -4,8 +4,7 @@
       <h1>Combien d'enfants</h1>
       <h2>souhaiteriez-vous avoir ?</h2>
     </div>
-    <a v-link="{ path: '/'}">Home</a>
-    <a v-link="{ path: '/dommage'}">Suite(dommage)</a>
+    <a v-link="{ path: '/dommage'}"></a>
     <div class="choice">
       <ul>
         <li class="child" v-for="child in children" track-by="$index" v-on:click="selectNumber($index, $event)">
@@ -42,7 +41,7 @@ export default {
 
       // translate the SVG the desired place
       let delta = child[1].offsetLeft - child[0].offsetLeft
-      document.querySelector('.svg-line').style.transform = `translateX(${index * delta - 480}px)`
+      document.querySelector('.svg-line').style.transform = `translateX(${index * delta - 488}px)`
     }
   }
 }
@@ -68,6 +67,7 @@ h1{
     text-align: center;
     font-size: 1.5rem;
   }
+
 svg.svg-line{
   position: absolute;
   top: 110px;
@@ -84,7 +84,7 @@ svg.svg-line{
 
 .choice{
   position: relative;
-  width: 100%;
+  width: 90%;
   max-width: 1000px;
   height: 300px;
   padding-top: 50px;
@@ -133,6 +133,14 @@ svg.svg-line{
   visibility: hidden;
   opacity: 0;
   display: none;
+}
+
+a {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100px;
+  height: 100px;
 }
 
 </style>
