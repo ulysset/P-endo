@@ -12,14 +12,17 @@
           {{$index}}
         </li>
       </ul>
-      <svg class="line" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 46.44" >
+      <svg class="svg-line" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 46.44" >
         <polyline class="beat" points="0 33.57 575 33.57 585 3.57 595 43.57 600 33.57 1280 33.57"/>
       </svg>
     </div>
+     <audioplayer src="http://jrlherm.com/webdoc/audio/intro_part1.mp3"></audioplayer>
   </div>
 </template>
 
-<script>
+<script scoped>
+import Vue from 'vue'
+Vue.component('audioplayer', require('./audioPlayer'))
 export default {
   data () {
     return {
@@ -39,7 +42,7 @@ export default {
 
       // translate the SVG the desired place
       let delta = child[1].offsetLeft - child[0].offsetLeft
-      document.querySelector('.line').style.transform = `translateX(${index * delta - 480}px)`
+      document.querySelector('.svg-line').style.transform = `translateX(${index * delta - 480}px)`
     }
   }
 }
@@ -65,7 +68,7 @@ h1{
     text-align: center;
     font-size: 1.5rem;
   }
-svg.line{
+svg.svg-line{
   position: absolute;
   top: 110px;
   left: -350px;
@@ -131,4 +134,5 @@ svg.line{
   opacity: 0;
   display: none;
 }
+
 </style>

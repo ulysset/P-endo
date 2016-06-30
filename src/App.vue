@@ -64,4 +64,41 @@
   h2 {
     font-family: 'Lora', serif;
   }
+  .play_button{
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    bottom: 25px;
+    right: 10vw;
+  }
+  
+  .passer {
+    text-transform: uppercase;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 300;
+    position: absolute;
+    cursor: pointer;
+    bottom: 27px;
+    right: 3vw;
+    color: rgba(255,255,255,0.7);
+  }
+
+
+::-webkit-scrollbar {
+    width: 7px;
+    height: 7px;
+}
+
+::-webkit-scrollbar-thumb {
+    -webkit-border-radius:1px;
+    -moz-border-radius:1px;
+    -o-border-radius:1px;
+    border-radius:1px;
+    background: rgba(100,100,100,0.5);  
+}
+::-webkit-scrollbar-corner {  
+  background: transparent;
+}
+
 </style>

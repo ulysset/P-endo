@@ -19,7 +19,7 @@
         },
         {
           "class_name": "malformation",
-          "title": "Malformation génital",
+          "title": "Malformation génitale",
           "subtitle": "En augmentation de 400% depuis les années 1950",
           "description": "L'anomalie génitale est un trouble ou une malformation affectant les organes génitaux chez l'homme (internes ou externes) ou chez la femme. Les types d'anomalies sont divers et peuvent être identifiés dès la naissance, notamment dans le cas d'origines génétiques. On observe une augmentation de ces malformations au cours de ces dernières années."
         },
@@ -48,7 +48,7 @@
           "description": "Actuellement, près de 4 000 nouveaux cas par an sont diagnostiqués en France. Dans la plupart des cas, ce cancer concerne les femmes de plus de 45 ans. Il se manifeste surtout entre 60 et 70 ans."
         },
         {
-          "class_name": "uteru",
+          "class_name": "uterus",
           "title": "Cancer de l’utérus",
           "subtitle": "En augmentation de 400% depuis les années 1950",
           "description": "Huitième cancer de la femme en France, le cancer du col de l'utérus touche près de 3 400 femmes chaque année et près de 1 000 en décèdent durant la même période."

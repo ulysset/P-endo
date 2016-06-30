@@ -6,11 +6,16 @@
 	    </div>
 	    <a v-link="{ path: '/'}">Home</a>
   		<a v-link="{ path: '/video_intro'}">Suite (vidéo intro)</a>
+  		<audioplayer src="http://jrlherm.com/webdoc/audio/intro_part2.mp3"></audioplayer>
 	</div>
+	
   
 </template>
 
-<script>
+<script scoped>
+import Vue from 'vue'
+Vue.component('audioplayer', require('./audioPlayer'))
+export default {}
 </script>
 
 <style lang="css" scoped>

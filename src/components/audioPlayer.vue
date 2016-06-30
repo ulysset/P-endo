@@ -1,7 +1,10 @@
 <template>
   <audio class="intro-audio" v-bind:src="src" autoplay type="audio/mpeg"></audio>
-  <div class="timeline" v-on:click="changeTime">
-    <div class="line"></div>
+  <div class="all_time">
+    <img class="play_button" v-bind:src="play_or_pause" alt="#" v-on:click="play"/>
+    <div class="timeline" v-on:click="changeTime">
+      <div class="line"></div>
+    </div>
   </div>
 </template>
 
@@ -9,11 +12,12 @@
 export default {
   data: function () {
     return {
+      play_or_pause: 'http://jrlherm.com/webdoc/svg/pause.svg'
     }
   },
   props: ['src'],
   ready() {
-		let line = document.querySelector('.line')
+		let line = document.querySelector('.timeline .line')
 		let player = document.querySelector('.intro-audio')
 		// Cursor position
 		window.setInterval(function(){
@@ -25,16 +29,19 @@ export default {
 	},
   methods : {
 		play : function(){
-			let player = document.querySelector('.intro-audio')
-			player.play()
-		},
-		pause : function(){
-			let player = document.querySelector('.intro-audio')
-			player.pause()
-		},
+      let player = document.querySelector('.intro-audio')
+      if (player.paused) {
+        player.play()
+        this.play_or_pause = 'http://jrlherm.com/webdoc/svg/pause.svg'
+      }
+      else {
+        player.pause()
+        this.play_or_pause ='http://jrlherm.com/webdoc/svg/play-button.svg'
+      }
+    },
 		changeTime : function(event){
 			let timeline = document.querySelector('.timeline')
-			let line = document.querySelector('.line')
+			let line = document.querySelector('.timeline .line')
 			let player = document.querySelector('.intro-audio')
 			// Count the percentage where the cursor is
 			let percent = event.clientX / timeline.offsetWidth * 100
@@ -47,47 +54,26 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-video.intro-audio{
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  min-width: 100%;
-  min-height: 100%;
-  width: auto;
-  height: auto;
-  transform: translateX(-50%) translateY(-50%);
-  background-size: cover;
-}
-.play-button{
-  width: 50px;
-  height: 50px;
-  background-color: red;
-  position: absolute;
-  left: 50%;
-  right: 50%;
-}
-.pause-button{
-  width: 50px;
-  height: 50px;
-  background-color: red;
-  position: absolute;
-  left: 0;
-  right: 50%;
+
+.play_button {
+  right: 3vw;
 }
 .timeline{
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  height: 30px;
-  background-color: lightcyan;
-  .line{
-    transition: all .1s ease-in;
+    z-index: 5;
+    cursor: pointer;
     position: absolute;
-    right: 100%;
+    bottom: 0;
     width: 100%;
-    height: 100%;
-    background-color: red;
-    transform: translateX(0%);
+    height: 10px;
+    background-color: grey;
+    .line{
+      transition: all .2s cubic-bezier(0,1,1,1);
+      position: absolute;
+      right: 100%;
+      width: 100%;
+      height: 100%;
+      background-color: white;
+      /* transform: translateX(0%); */
+    }
   }
-}
 </style>

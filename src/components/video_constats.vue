@@ -1,10 +1,10 @@
 <template lang="html">
 	<div class="content" transition="fade">
 		<video class="intro-video" preload="auto">
-			<source src="http://jrlherm.com/webdoc/videos/introduction.mp4" type="video/mp4">
+			<source src="http://jrlherm.com/webdoc/videos/molusque-aligator.mp4" type="video/mp4">
 		</video>
 		<img class="play_button" v-bind:src="play_or_pause" alt="#" v-on:click="play"/>
-		<a class="passer" v-link="{ path: '/maladies'}">Passer</a>
+		<a class="passer" v-link="{ path: '/constats'}">Passer</a>
 		<div class="timeline" v-on:click="changeTime">
 			<div class="line"></div>
 		</div>

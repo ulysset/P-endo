@@ -34,7 +34,7 @@ export default {
     color: white;
   }
   h1{
-    padding-top: 25%;
+    padding-top: 22%;
     text-align: center;
     font-size: 3.5rem;
   }
@@ -44,7 +44,6 @@ export default {
     font-size: 1.5rem;
   }
   a.begin-button{
-   /*  background: lightcyan; */
     display: block;
     font-size: 1rem;
     width: 60%;

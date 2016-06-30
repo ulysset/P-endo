@@ -29,6 +29,12 @@ router.map({
   },
   '/PE': {
     component: require('components/PE.vue')
+  },
+  '/video_constats': {
+    component: require('components/video_constats.vue')
+  },
+  '/video_experiment': {
+    component: require('components/video_experiment.vue')
   }
   // '/country/:key': {
   //   component: require('components/country')
