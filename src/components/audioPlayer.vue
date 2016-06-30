@@ -24,8 +24,12 @@ export default {
 			// Count the percentage passed
 			let percent = (player.currentTime / player.duration) * 100
 			// Update position of the line
+
 			line.style.transform = `translateX(${percent}%)`
+      if (player.currentTime >= player.duration)
+        this.$router.route.go('/')
 		},100);
+    console.log(this);
 	},
   methods : {
 		play : function(){

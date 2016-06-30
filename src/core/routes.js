@@ -35,6 +35,9 @@ router.map({
   },
   '/video_experiment': {
     component: require('components/video_experiment.vue')
+  },
+  '/constats': {
+    component: require('components/constats.vue')
   }
   // '/country/:key': {
   //   component: require('components/country')

@@ -33,7 +33,8 @@
     position: relative;
     width: 100%;
     height: 100%;
-    overflow: hidden;
+    overflow-y: hidden;
+    overflow-x: auto;
     height: 100%;
   }
   html {
