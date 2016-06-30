@@ -23,6 +23,12 @@ router.map({
   },
   '/chiffres_chimique': {
     component: require('components/chiffres_chimique.vue')
+  },
+  '/audio_test': {
+    component: require('components/audioTest.vue')
+  },
+  '/PE': {
+    component: require('components/PE.vue')
   }
   // '/country/:key': {
   //   component: require('components/country')
