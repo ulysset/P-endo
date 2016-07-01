@@ -1,6 +1,6 @@
 <template lang="html">
 	<div class="content" transition="fade">
-		<video class="intro-video" preload="auto" autoplay>
+		<video class="intro-video" preload="auto">
 			<source src="http://jrlherm.com/webdoc/videos/introduction.mp4" type="video/mp4">
 		</video>
 		<img class="play_button" v-bind:src="play_or_pause" alt="#" v-on:click="play"/>
@@ -46,6 +46,7 @@ export default {
 	ready() {
 		let line = document.querySelector('.line')
 		let player = document.querySelector('.intro-video')
+		player.play()
 		// Cursor position
 		window.setInterval(function(){
 			// Count the percentage passed
@@ -55,7 +56,7 @@ export default {
 		},100);
 		let router = new VueRouter()
 		player.onended= function(){
-			router.go({path:`/video_constats`})
+			router.go({path:`/maladies`})
 		}
 
 	}

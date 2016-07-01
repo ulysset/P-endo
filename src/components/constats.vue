@@ -1,5 +1,6 @@
 <template lang="html">
 	<div class="container">
+		<a v-link="{ path: '/video_experiment'}">Suite (vidéoexperiment)</a>
 			<div class="cloud-images">
 				<img class="cloud-image" v-for="cloudImage in cloudImages" track-by="$index" v-on:click="grow($index, $event)" :src="cloudImage.url" :style=" {'z-index': cloudImage.z, 'transform-origin': cloudImage.origin , 'transform' : 'translate(' + cloudImage.X + 'px,' + cloudImage.Y + 'px) scale(' + cloudImage.grow + ')' }" alt="" />
 			</div>
@@ -9,8 +10,7 @@
 			<p class="description" v-if="doShow(3)">Welcome </p>
 			<p class="description" v-if="doShow(4)">YO </p>
 	</div>
-	<a v-link="{ path: '/'}">Home</a>
-	<a v-link="{ path: '/video_experiment'}">Suite (vidéoexperiment)</a>
+	
 
 
 </template>

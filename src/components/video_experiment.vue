@@ -1,6 +1,6 @@
 <template lang="html">
 	<div class="content" transition="fade">
-		<video class="intro-video" preload="auto" autoplay>
+		<video class="intro-video" preload="auto">
 			<source src="http://jrlherm.com/webdoc/videos/experiment.mp4" type="video/mp4">
 		</video>
 		<img class="play_button" v-bind:src="play_or_pause" alt="#" v-on:click="play"/>
