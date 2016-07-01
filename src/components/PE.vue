@@ -50,8 +50,9 @@
 
       <div class="contentItem" v-if="doShow(3)" transition="slide">
         <h1>Les Perturbateurs Endocriniens</h1>
-        <h3>Les tests en labo</h3>
+
         <div class="part part1">
+          <h3>Les tests en labo</h3>
           <p>On administre du DEHP et du DBP (molécules chimiques et également du coup des perturbateurs endocriniens) à la mère souris, le bébé mâle a des modifications du système génital (distance anogénitale réduite, pénis plus court et/ou mal formé, des testicules non descendus) entraînant chez lui des problèmes de fertilité et une réduction du nombre de spermatozoïdes</p>
           <video class="rats-pe" preload="auto" controls>
             <source src="http://jrlherm.com/webdoc/videos/rats.mp4" type="video/mp4">
@@ -194,10 +195,11 @@ h1{
 h3 {
   font-family: "Montserrat", sans-serif;
   font-size: 1.5rem;
+  margin-bottom: 3%;
 }
 
 .part{
-  width: 45vw;
+  width: 43vw;
 }
 
 .part p {
@@ -207,16 +209,17 @@ h3 {
   text-align: center;
   font-family: "Source", sans-serif;
   font-size: 0.9rem;
+  line-height: 1.6rem;
 }
 
 .part1 {
-  padding-top: 20%;
+  padding-top: 15%;
   margin-left: 5vw;
 }
 
 .part2{
-  padding-top: 5%;
-  margin-left: 30vw;
+  padding-top: 10%;
+  margin-left: 33vw;
 }
 
 .citation {
@@ -247,13 +250,13 @@ video.science-pe {
 
 video.escargots-pe {
   width: 25vw;
-  left: 5vw;
-  bottom: -5vh;
+  left: 5%;
+  bottom: -20%;
 }
 
 video.rats-pe {
   right: 5vw;
-  top: 30vh;
+  top: 20vh;
   width: 25vw;
 }
 
