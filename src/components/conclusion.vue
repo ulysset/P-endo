@@ -32,9 +32,10 @@ export default {
 	  h2 {
 	  	width: 60vw;
 	  	margin: auto;
-	    padding-top: 20%;
+	    padding-top: 16%;
 	    text-align: center;
-	    font-size: 1.5rem;
+	    font-size: 1.2rem;
+	    line-height: 1.6rem;
 	  }
 	  a {
 		  position: absolute;
