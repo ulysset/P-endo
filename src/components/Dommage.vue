@@ -5,7 +5,7 @@
 	      <h1>Vous n'en aurez pas.</h1>
 	    </div>
   		<a v-link="{ path: '/video_intro'}">La suite...</a>
-			<audio class="intro-audio" src="http://jrlherm.com/webdoc/audio/intro_part2.mp3" type="audio/mpeg"></audio>
+			<audio class="intro-audio2" src="http://jrlherm.com/webdoc/audio/intro_part2.mp3" type="audio/mpeg"></audio>
 		  <div class="all_time">
 		    <img class="play_button" v-bind:src="play_or_pause" alt="Play or Pause Sound" v-on:click="play"/>
 		    <div class="timeline" v-on:click="changeTime">
@@ -30,11 +30,11 @@ export default {
 	},
 	ready() {
 		let bar = document.querySelector('.progress-bar')
-		let player2 = document.querySelector('.intro-audio')
+		let player2 = document.querySelector('.intro-audio2')
 		player2.play()
     let router = new VueRouter()
     player2.onended= function(){
-			router.go({path:`/video_intro`})
+			router.go({path:'/video_intro'})
 		}
 		// Cursor position
 		window.setInterval(function(){
@@ -46,7 +46,7 @@ export default {
 	},
 	methods: {
 		play : function(){
-			let player2 = document.querySelector('.intro-audio')
+			let player2 = document.querySelector('.intro-audio2')
 			if (player2.paused) {
 				player2.play()
 				this.play_or_pause = 'http://jrlherm.com/webdoc/svg/pause.svg'
@@ -59,7 +59,7 @@ export default {
 		changeTime : function(event){
 			let timeline = document.querySelector('.timeline')
 			let bar = document.querySelector('.progress-bar')
-			let player2 = document.querySelector('.intro-audio')
+			let player2 = document.querySelector('.intro-audio2')
 			// Count the percentage where the cursor is
 			let percent = event.clientX / timeline.offsetWidth * 100
 			player2.currentTime = player2.duration * percent/100

@@ -4,7 +4,7 @@
 	      <h2>Il est impossible que des choix individuels puissent nous protéger des expositions aux produits chimiques, nous avons donc besoin d’une politique régulatrice concertée pour nous protéger. Nous avons trop longtemps laissé l’industrie commercialiser des produits chimiques sans les tester correctement. Il faudrait la détermination de toute la société pour obtenir un changement radical !</h2>
 	    </div>
   		<!-- <audioplayer src="http://jrlherm.com/webdoc/audio/conclusion.mp3"></audioplayer> -->
-  		<audio class="intro-audio" src="http://jrlherm.com/webdoc/audio/conclusion.mp3" type="audio/mpeg"></audio>
+  		<audio class="ccl-audio" src="http://jrlherm.com/webdoc/audio/conclusion.mp3" type="audio/mpeg"></audio>
 		<div class="all_time">
 	       <img class="play_button" v-bind:src="play_or_pause" alt="Play or Pause Sound" v-on:click="play"/>
 	       <div class="timeline" v-on:click="changeTime">
@@ -27,7 +27,7 @@ export default {
 	},
 	ready() {
     let bar = document.querySelector('.progress-bar')
-	let player = document.querySelector('.intro-audio')
+	let player = document.querySelector('.ccl-audio')
     player.currentTime = 0
     player.play();
   		// Cursor position
@@ -40,7 +40,7 @@ export default {
   },
 	methods: {
 	play : function(){
-      let player = document.querySelector('.intro-audio')
+      let player = document.querySelector('.ccl-audio')
       if (player.paused) {
         player.play()
         this.play_or_pause = 'http://jrlherm.com/webdoc/svg/pause.svg'
@@ -53,7 +53,7 @@ export default {
 	changeTime : function(event){
 			let timeline = document.querySelector('.timeline')
 			let bar = document.querySelector('.progress-bar')
-			let player = document.querySelector('.intro-audio')
+			let player = document.querySelector('.ccl-audio')
 			// Count the percentage where the cursor is
 			let percent = event.clientX / timeline.offsetWidth * 100
 			player.currentTime = player.duration * percent/100
@@ -72,7 +72,7 @@ export default {
 	    color: white;
 	}
 	  h2 {
-	  	width: 60vw;
+	  	width: 40vw;
 	  	margin: auto;
 	    padding-top: 16%;
 	    text-align: center;

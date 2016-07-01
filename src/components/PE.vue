@@ -84,7 +84,7 @@ export default {
   computed: {
     currentBackground: function() {
       let temp = 'http://jrlherm.com/webdoc/photos/bg_pe_' + (this.currentIndex + 1) +'.jpg'
-      console.log(temp)
+      /*let temp = 'src/assets/images/bg_pe_' + (this.currentIndex + 1) +'.jpg'*/
       return temp
     },
     doDark: function (index) {

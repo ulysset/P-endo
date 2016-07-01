@@ -43,7 +43,7 @@ export default {
     player.play();
     let router = new VueRouter()
     player.onended= function(){
-			router.go({path:`/temp`})
+			router.go({path:'/temp'})
 		}
 		// Cursor position
 		window.setInterval(function(){

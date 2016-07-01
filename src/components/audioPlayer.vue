@@ -1,5 +1,5 @@
 <template>
-  <audio class="intro-audio" v-bind:src="src" type="audio/mpeg"></audio>
+  <audio class="intro-audio" v-bind:src="src" type="audio/mpeg" autoplay></audio>
   <div class="all_time">
     <img class="play_button" v-bind:src="play_or_pause" alt="Play or Pause Sound" v-on:click="play"/>
     <div class="timeline" v-on:click="changeTime">
