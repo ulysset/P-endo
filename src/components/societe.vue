@@ -44,7 +44,7 @@ export default {
 }
 </script>
 
-<style lang="css" scoped>
+<style lang="scss" scoped>
 
 .wrapper {
   color: white;

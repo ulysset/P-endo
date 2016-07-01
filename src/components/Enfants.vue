@@ -15,7 +15,7 @@
         <polyline class="beat" points="0 33.57 575 33.57 585 3.57 595 43.57 600 33.57 1280 33.57"/>
       </svg>
     </div>
-     <audio class="intro-audio" src="http://jrlherm.com/webdoc/audio/intro_part1.mp3" autoplay type="audio/mpeg"></audio>
+     <audio class="intro-audio" src="http://jrlherm.com/webdoc/audio/intro_part1.mp3" type="audio/mpeg"></audio>
      <div class="all_time">
        <img class="play_button" v-bind:src="play_or_pause" alt="Play or Pause Sound" v-on:click="play"/>
        <div class="timeline" v-on:click="changeTime">
@@ -40,6 +40,7 @@ export default {
     let bar = document.querySelector('.progress-bar')
 		let player = document.querySelector('.intro-audio')
     player.currentTime = 0
+    player.play();
     let router = new VueRouter()
     player.onended= function(){
 			router.go({path:`/temp`})

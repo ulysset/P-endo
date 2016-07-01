@@ -1,5 +1,5 @@
 <template>
-  <audio class="intro-audio" v-bind:src="src" autoplay type="audio/mpeg"></audio>
+  <audio class="intro-audio" v-bind:src="src" type="audio/mpeg"></audio>
   <div class="all_time">
     <img class="play_button" v-bind:src="play_or_pause" alt="Play or Pause Sound" v-on:click="play"/>
     <div class="timeline" v-on:click="changeTime">
@@ -21,6 +21,7 @@ export default {
   ready() {
 		let bar = document.querySelector('.progress-bar')
 		let player = document.querySelector('.intro-audio')
+    player.play()
     player.currentTime = 0
 		// Cursor position
 		window.setInterval(function(){
