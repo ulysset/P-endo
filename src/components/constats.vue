@@ -1,22 +1,22 @@
 <template lang="html">
 	<div class="container">
-		<a v-link="{ path: '/video_experiment'}">Suite (vidéoexperiment)</a>
+		<a v-link="{ path: '/video_experiment'}">Continuer</a>
 			<div class="cloud-images">
 				<img v-for="cloudImage in cloudImages" class="cloud-image {{ cloudImage.theclass }}" track-by="$index" v-on:click="grow($index, $event)" :src="cloudImage.url" :style=" {'z-index': cloudImage.z, 'transform-origin': cloudImage.origin , 'transform' : 'translate(' + cloudImage.X + 'px,' + cloudImage.Y + 'px) scale(' + cloudImage.grow + ')' }" alt="" />
 			</div>
-			<p class="description" v-if="doShow(1)">
+			<p class="description" v-if="doShow(0)">
 				Féminisation des poissons, des animaux marins ainsi que des souris. Nous retrouvons des grenouilles femelles avec des organes génitaux masculins
 			</p>
-			<p class="description" v-if="doShow(2)">
+			<p class="description" v-if="doShow(1)">
 				On retrouve des hormones féminines dans la nature. Il y a moins de testostérones chez les espèces analysés, et beaucoup d'oestrogène. On tend vers une féminisation des espèces
 			</p>
-			<p class="description" v-if="doShow(3)">
+			<p class="description" v-if="doShow(2)">
 				Diminution de la distance ano-génitale, de la taille du pénis et malformations génitales observés chez la souris ainsi que chez l’homme
 			</p>
-			<p class="description" v-if="doShow(4)">
+			<p class="description" v-if="doShow(3)">
 				Stations d’épurations défaillantes sans traitements de médicaments ou produits chimiques. Cela implique un énorme impact sur beaucoup d’espèces animales ainsi que chez les humains
 			</p>
-			<p class="description" v-if="doShow(5)">
+			<p class="description" v-if="doShow(4)">
 				Tout ces constats entraînent une infertilité chez beaucoup d’espèces, cela sonne comme un avertissement pour nous !  Mais alors pourquoi ? 
 			</p>
 	</div>
@@ -87,6 +87,12 @@ export default {
 <style lang="scss" scoped>
 a {
 	position: absolute;
+	text-transform: uppercase;
+	bottom: 5%;
+	right: 5%;
+	text-decoration: none;
+	color: white;
+	font-family: "Montserrat",sans-serif;
 }
 .container{
 	display: flex;
@@ -121,6 +127,7 @@ a {
 		/* background-color: grey; */
 		font-family: "Lora", serif;
 		font-size: 1.2rem;
+		color: white;
 	}
 
 	.img1{
