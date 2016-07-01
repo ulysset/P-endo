@@ -17,18 +17,11 @@ export default {
       play_or_pause: 'http://jrlherm.com/webdoc/svg/pause.svg'
     }
   },
-  props: ['src', 'next'],
+  props: ['src'],
   ready() {
 		let bar = document.querySelector('.progress-bar')
 		let player = document.querySelector('.intro-audio')
     player.currentTime = 0
-    let router = new VueRouter()
-    let next = this.next
-    player.addEventListener('ended', nextPage, false);
-    function nextPage(){
-      router.go({path:`/${next}`})
-      player.currentTime = 0
-    }
 		// Cursor position
 		window.setInterval(function(){
 			// Count the percentage passed

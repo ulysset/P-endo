@@ -5,7 +5,13 @@
 	      <h1>Vous n'en aurez pas.</h1>
 	    </div>
   		<a v-link="{ path: '/video_intro'}"></a>
-  		<audioplayer src="http://jrlherm.com/webdoc/audio/intro_part2.mp3"></audioplayer>
+			<audio class="intro-audio" src="http://jrlherm.com/webdoc/audio/intro_part2.mp3" autoplay type="audio/mpeg"></audio>
+		  <div class="all_time">
+		    <img class="play_button" v-bind:src="play_or_pause" alt="Play or Pause Sound" v-on:click="play"/>
+		    <div class="timeline" v-on:click="changeTime">
+		      <div class="progress-bar"></div>
+		    </div>
+		  </div>
 	</div>
 
 
@@ -18,21 +24,51 @@ import VueRouter from 'vue-router'
 Vue.component('audioplayer', require('./audioPlayer'))
 export default {
 	data(){
-		return{}
-	},
-	ready() {
-		let the_audio = document.querySelector('audio');
-		let router = new VueRouter()
-		the_audio.onended= function(){
-			router.go({path:`/video_intro`})
+		return{
+			play_or_pause: 'http://jrlherm.com/webdoc/svg/pause.svg'
 		}
 	},
+	ready() {
+		let bar = document.querySelector('.progress-bar')
+		let player2 = document.querySelector('.intro-audio')
+    let router = new VueRouter()
+    player2.onended= function(){
+			router.go({path:`/video_intro`})
+		}
+		// Cursor position
+		window.setInterval(function(){
+			// Count the percentage passed
+			let percent = (player2.currentTime / player2.duration) * 100
+			// Update position of the line
+			bar.style.transform = `translateX(${percent}%)`
+		},100);
+	},
 	methods: {
+		play : function(){
+			let player2 = document.querySelector('.intro-audio')
+			if (player2.paused) {
+				player2.play()
+				this.play_or_pause = 'http://jrlherm.com/webdoc/svg/pause.svg'
+			}
+			else {
+				player2.pause()
+				this.play_or_pause ='http://jrlherm.com/webdoc/svg/play-button.svg'
+			}
+		},
+		changeTime : function(event){
+			let timeline = document.querySelector('.timeline')
+			let bar = document.querySelector('.progress-bar')
+			let player2 = document.querySelector('.intro-audio')
+			// Count the percentage where the cursor is
+			let percent = event.clientX / timeline.offsetWidth * 100
+			player2.currentTime = player2.duration * percent/100
+			bar.style.transform = `translateX(${percent}%)`;
+		}
 	}
 }
 </script>
 
-<style lang="css" scoped>
+<style lang="scss" scoped>
 	.content{
 	    width: 100%;
 	    height: 100%;
@@ -57,4 +93,26 @@ export default {
 		  width: 100px;
 		  height: 100px;
 		}
+		.play_button {
+		  right: 3vw;
+		}
+.timeline{
+    z-index: 5;
+    cursor: pointer;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 10px;
+    background-color: grey;
+    .progress-bar{
+      transition: all .2s cubic-bezier(0,1,1,1);
+      position: absolute;
+      right: 100%;
+      width: 100%;
+      height: 100%;
+      background-color: white;
+      /* transform: translateX(0%); */
+    }
+}
+
 </style>

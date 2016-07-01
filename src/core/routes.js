@@ -48,7 +48,8 @@ router.map({
   }
 })
 router.redirect({
-  '*': '/'
+  '*': '/',
+  'temp': '/dommage'
 })
 
 export default router

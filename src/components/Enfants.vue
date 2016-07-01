@@ -15,18 +15,42 @@
         <polyline class="beat" points="0 33.57 575 33.57 585 3.57 595 43.57 600 33.57 1280 33.57"/>
       </svg>
     </div>
-     <audioplayer src="http://jrlherm.com/webdoc/audio/intro_part1.mp3" next="dommage"></audioplayer>
+     <audio class="intro-audio" src="http://jrlherm.com/webdoc/audio/intro_part1.mp3" autoplay type="audio/mpeg"></audio>
+     <div class="all_time">
+       <img class="play_button" v-bind:src="play_or_pause" alt="Play or Pause Sound" v-on:click="play"/>
+       <div class="timeline" v-on:click="changeTime">
+         <div class="progress-bar"></div>
+       </div>
+     </div>
   </div>
 </template>
 
 <script scoped>
 import Vue from 'vue'
+import VueRouter from 'vue-router'
 Vue.component('audioplayer', require('./audioPlayer'))
 export default {
   data () {
     return {
-      children: new Array(7)
+      children: new Array(7),
+      play_or_pause: 'http://jrlherm.com/webdoc/svg/pause.svg'
     }
+  },
+  ready() {
+    let bar = document.querySelector('.progress-bar')
+		let player = document.querySelector('.intro-audio')
+    player.currentTime = 0
+    let router = new VueRouter()
+    player.onended= function(){
+			router.go({path:`/temp`})
+		}
+		// Cursor position
+		window.setInterval(function(){
+			// Count the percentage passed
+			let percent = (player.currentTime / player.duration) * 100
+			// Update position of the line
+			bar.style.transform = `translateX(${percent}%)`
+		},100);
   },
   methods: {
     selectNumber: function (index, event) {
@@ -42,7 +66,27 @@ export default {
       // translate the SVG the desired place
       let delta = child[1].offsetLeft - child[0].offsetLeft
       document.querySelector('.svg-line').style.transform = `translateX(${index * delta - 488}px)`
-    }
+    },
+    play : function(){
+      let player = document.querySelector('.intro-audio')
+      if (player.paused) {
+        player.play()
+        this.play_or_pause = 'http://jrlherm.com/webdoc/svg/pause.svg'
+      }
+      else {
+        player.pause()
+        this.play_or_pause ='http://jrlherm.com/webdoc/svg/play-button.svg'
+      }
+    },
+		changeTime : function(event){
+			let timeline = document.querySelector('.timeline')
+			let bar = document.querySelector('.progress-bar')
+			let player = document.querySelector('.intro-audio')
+			// Count the percentage where the cursor is
+			let percent = event.clientX / timeline.offsetWidth * 100
+			player.currentTime = player.duration * percent/100
+			bar.style.transform = `translateX(${percent}%)`;
+		}
   }
 }
 </script>
@@ -106,6 +150,27 @@ svg.svg-line{
     }
   }
 }
+.play_button {
+  right: 3vw;
+}
+.timeline{
+    z-index: 5;
+    cursor: pointer;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 10px;
+    background-color: grey;
+    .progress-bar{
+      transition: all .2s cubic-bezier(0,1,1,1);
+      position: absolute;
+      right: 100%;
+      width: 100%;
+      height: 100%;
+      background-color: white;
+      /* transform: translateX(0%); */
+    }
+  }
 
 .child {
   opacity: 0.5;
