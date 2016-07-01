@@ -4,7 +4,7 @@
 	      <h2>Quoi qu'il en soit ...</h2>
 	      <h1>Vous n'en aurez pas.</h1>
 	    </div>
-  		<a v-link="{ path: '/video_intro'}"></a>
+  		<a v-link="{ path: '/video_intro'}">La suite...</a>
 			<audio class="intro-audio" src="http://jrlherm.com/webdoc/audio/intro_part2.mp3" autoplay type="audio/mpeg"></audio>
 		  <div class="all_time">
 		    <img class="play_button" v-bind:src="play_or_pause" alt="Play or Pause Sound" v-on:click="play"/>
@@ -88,10 +88,17 @@ export default {
 	  }
 	  a {
 		  position: absolute;
-		  top: 0px;
-		  left: 0px;
-		  width: 100px;
-		  height: 100px;
+			transition: all .2s ease-in;
+		  bottom: 70px;
+		  right: 10px;
+			padding: 20px;
+			background: rgba(0, 0, 0, .3);
+			border-radius: 5%;
+			color: white;
+			font-family: 'Montserrat', sans-serif;
+			&:hover{
+				background: rgba(0, 0, 0, .6);
+			}
 		}
 		.play_button {
 		  right: 3vw;
