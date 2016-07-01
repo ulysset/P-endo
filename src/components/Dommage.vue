@@ -5,11 +5,11 @@
 	      <h1>Vous n'en aurez pas.</h1>
 	    </div>
   		<a v-link="{ path: '/video_intro'}">La suite...</a>
-			<audio class="intro-audio2" src="http://jrlherm.com/webdoc/audio/intro_part2.mp3" type="audio/mpeg"></audio>
+		<audio class="intro-audio2" v-bind:src="src_video2" type="audio/mpeg" autoplay></audio>
 		  <div class="all_time">
 		    <img class="play_button" v-bind:src="play_or_pause" alt="Play or Pause Sound" v-on:click="play"/>
 		    <div class="timeline" v-on:click="changeTime">
-		      <div class="progress-bar"></div>
+		      <div class="progress-bar2"></div>
 		    </div>
 		  </div>
 	</div>
@@ -25,15 +25,17 @@ Vue.component('audioplayer', require('./audioPlayer'))
 export default {
 	data(){
 		return{
-			play_or_pause: 'http://jrlherm.com/webdoc/svg/pause.svg'
+			play_or_pause: 'http://jrlherm.com/webdoc/svg/pause.svg',
+			src_video2: ''
 		}
 	},
 	ready() {
-		let bar = document.querySelector('.progress-bar')
+		let bar = document.querySelector('.progress-bar2')
 		let player2 = document.querySelector('.intro-audio2')
-		player2.play()
-    let router = new VueRouter()
-    player2.onended= function(){
+		this.src_video2 = 'http://jrlherm.com/webdoc/audio/intro_part2.mp3'
+		/*player2.play()*/
+    	let router = new VueRouter()
+    	player2.onended= function(){
 			router.go({path:'/video_intro'})
 		}
 		// Cursor position
@@ -58,7 +60,7 @@ export default {
 		},
 		changeTime : function(event){
 			let timeline = document.querySelector('.timeline')
-			let bar = document.querySelector('.progress-bar')
+			let bar = document.querySelector('.progress-bar2')
 			let player2 = document.querySelector('.intro-audio2')
 			// Count the percentage where the cursor is
 			let percent = event.clientX / timeline.offsetWidth * 100
@@ -112,15 +114,15 @@ export default {
     width: 100%;
     height: 10px;
     background-color: grey;
-    .progress-bar{
-      transition: all .2s cubic-bezier(0,1,1,1);
+}
+
+.timeline .progress-bar2 {
+	transition: all .2s cubic-bezier(0,1,1,1);
       position: absolute;
       right: 100%;
       width: 100%;
       height: 100%;
       background-color: white;
-      /* transform: translateX(0%); */
-    }
 }
 
 </style>

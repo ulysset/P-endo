@@ -15,7 +15,7 @@
         <polyline class="beat" points="0 33.57 575 33.57 585 3.57 595 43.57 600 33.57 1280 33.57"/>
       </svg>
     </div>
-     <audio class="intro-audio" src="http://jrlherm.com/webdoc/audio/intro_part1.mp3" type="audio/mpeg"></audio>
+     <audio class="intro-audio" v-bind:src="src_video" type="audio/mpeg" autoplay></audio>
      <div class="all_time">
        <img class="play_button" v-bind:src="play_or_pause" alt="Play or Pause Sound" v-on:click="play"/>
        <div class="timeline" v-on:click="changeTime">
@@ -33,14 +33,16 @@ export default {
   data () {
     return {
       children: new Array(7),
-      play_or_pause: 'http://jrlherm.com/webdoc/svg/pause.svg'
+      play_or_pause: 'http://jrlherm.com/webdoc/svg/pause.svg',
+      src_video: ''
     }
   },
   ready() {
     let bar = document.querySelector('.progress-bar')
 		let player = document.querySelector('.intro-audio')
+    this.src_video = 'http://jrlherm.com/webdoc/audio/intro_part1.mp3'
     player.currentTime = 0
-    player.play();
+    /*player.play();*/
     let router = new VueRouter()
     player.onended= function(){
 			router.go({path:'/temp'})
