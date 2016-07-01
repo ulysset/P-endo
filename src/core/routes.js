@@ -42,10 +42,10 @@ router.map({
   },
   '/societe': {
     component: require('components/societe.vue')
-  }/*,
+  },
   '/conclusion': {
     component: require('components/conclusion.vue')
-  }*/
+  }
 })
 router.redirect({
   '*': '/'

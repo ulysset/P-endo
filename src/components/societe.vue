@@ -9,14 +9,19 @@
     <div class="block block_3" v-on:mouseover="mouseOver('block_3')">“Le lobby de l’industrie de la chimie en Europe c’est 6 millions d’euros dépensés chaque année.”</div>
 
     <div class="block block_4" v-on:mouseover="mouseOver('block_4')"> 
-      <video controls src="http://jrlherm.com/webdoc/videos/lobby_ecpa.mp4"></video> 
+      <video controls src="http://jrlherm.com/webdoc/videos/lobby_reglementation.mp4" width="400px"></video> 
     </div>
     <div class="block block_5" v-on:mouseover="mouseOver('block_5')"> 
-      <video controls src="http://jrlherm.com/webdoc/videos/lobby_reglementation.mp4"></video> 
+      <video controls src="http://jrlherm.com/webdoc/videos/lobby_ecpa.mp4" width="300px"></video> 
     </div>
     <div class="block block_6" v-on:mouseover="mouseOver('block_6')">Un lobbying des gouvernements, des entreprises et des associations est perceptible. L’’ECPA (Aassociation européenne pour la protection des cultures) défend clairement l’utilisation des pesticides comme étant sans effets pour la santé et identité aux perturbateurs naturels.</div>
     <div class="block block_7"  v-on:mouseover="mouseOver('block_7')">Aujourd’hui, on a remarqué que le taux de productivité de l’agriculture biologique sans pesticide était supérieur à l’agriculture utilisant les produits chimiques. Cependant, le coût de réorganisation et de restructuration freinent les entreprises agricoles.</div>
     <div class="block block_8"  v-on:mouseover="mouseOver('block_8')">Aujourd’hui, le débat entre l’utilisation ou non des produits chimiques fait rage dans la communauté scientifiques. C’est un sujet important au niveau politique et industriel. Il y a donc beaucoup de partis impliqués prônant chacun la version qui les avantages. </div>
+    <a v-link="{ path: '/conclusion'}">
+      <div class="block conclu">
+        En finir
+        </div>
+    </a>
 </div>
 </template>
 
@@ -68,6 +73,7 @@ export default {
 .block.hover{
   z-index: 5;
   transform: scale(1.3);
+  /* transform: translate(50%); */
   background-color: rgba(0,0,0,0.8);
 }
 
@@ -91,23 +97,25 @@ export default {
   line-height: 1.5rem;
   font-family: "Lora", sans-serif;
 }
-
+/* 
 .block4 video {
-  width: 35vw;
+  width: 15vw;
 }
-
+ */
 .block_4 {
  left: 42vw;
  top:38vh;
+ padding: 0px;
 }
 
 .block_5 {
   left: 10vw;
   bottom: 10vh;
-}
+  padding: 0px;
+}/* 
 .block5 video {
   width: 18vw;
-}
+} */
 
 .block_6 {
     width: 40vw;
@@ -125,6 +133,17 @@ export default {
   width: 70vw;
   left: 10vw;
   bottom: 3vh;
+}
+
+
+.conclu {
+  right: 2vw;
+  bottom: 2vh;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: white;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1rem;
 }
 
 </style>
