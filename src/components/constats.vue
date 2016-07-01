@@ -2,13 +2,23 @@
 	<div class="container">
 		<a v-link="{ path: '/video_experiment'}">Suite (vidéoexperiment)</a>
 			<div class="cloud-images">
-				<img class="cloud-image" v-for="cloudImage in cloudImages" track-by="$index" v-on:click="grow($index, $event)" :src="cloudImage.url" :style=" {'z-index': cloudImage.z, 'transform-origin': cloudImage.origin , 'transform' : 'translate(' + cloudImage.X + 'px,' + cloudImage.Y + 'px) scale(' + cloudImage.grow + ')' }" alt="" />
+				<img v-for="cloudImage in cloudImages" class="cloud-image {{ cloudImage.theclass }}" track-by="$index" v-on:click="grow($index, $event)" :src="cloudImage.url" :style=" {'z-index': cloudImage.z, 'transform-origin': cloudImage.origin , 'transform' : 'translate(' + cloudImage.X + 'px,' + cloudImage.Y + 'px) scale(' + cloudImage.grow + ')' }" alt="" />
 			</div>
-			<p class="description" v-if="doShow(0)">Welcome my friend</p>
-			<p class="description" v-if="doShow(1)">Welcome my </p>
-			<p class="description" v-if="doShow(2)">Welcome my friends</p>
-			<p class="description" v-if="doShow(3)">Welcome </p>
-			<p class="description" v-if="doShow(4)">YO </p>
+			<p class="description" v-if="doShow(1)">
+				Féminisation des poissons, des animaux marins ainsi que des souris. Nous retrouvons des grenouilles femelles avec des organes génitaux masculins
+			</p>
+			<p class="description" v-if="doShow(2)">
+				On retrouve des hormones féminines dans la nature. Il y a moins de testostérones chez les espèces analysés, et beaucoup d'oestrogène. On tend vers une féminisation des espèces
+			</p>
+			<p class="description" v-if="doShow(3)">
+				Diminution de la distance ano-génitale, de la taille du pénis et malformations génitales observés chez la souris ainsi que chez l’homme
+			</p>
+			<p class="description" v-if="doShow(4)">
+				Stations d’épurations défaillantes sans traitements de médicaments ou produits chimiques. Cela implique un énorme impact sur beaucoup d’espèces animales ainsi que chez les humains
+			</p>
+			<p class="description" v-if="doShow(5)">
+				Tout ces constats entraînent une infertilité chez beaucoup d’espèces, cela sonne comme un avertissement pour nous !  Mais alors pourquoi ? 
+			</p>
 	</div>
 	
 
@@ -21,25 +31,30 @@ export default {
     return {
 			currentIndex : 0,
 			cloudImages : [
+				{ z: 1, grow: 1, origin : 'center',
+				 X : -150-50, Y : 150-50,
+				url : 'http://jrlherm.com/webdoc/photos/img_grenouille.png',
+				theclass : 'img3'
+				},
+				{ z: 1, grow: 1, origin :'center',
+				 X : 150-50, Y : -150-50,
+				url : 'http://jrlherm.com/webdoc/photos/img_fonds_marins.png',
+				theclass : 'img2'
+				},
+				{ z: 1, grow: 1, origin :'center',
+				 X : -150-50, Y : -150-50,
+				url : 'http://jrlherm.com/webdoc/photos/img_tubes_a_essais.png',
+				theclass : 'img4'
+				},
+				{ z: 1, grow: 1, origin : 'center',
+				 X : 150-50, Y : 150-50,
+				url : 'http://jrlherm.com/webdoc/photos/img_usine.png',
+				theclass : 'img5'
+				},
 				{ z: 2, grow: 2, origin : 'center',
 				 X : 0-50, Y : 0-50,
-				url : 'http://jrlherm.com/webdoc/photos/img_cellules.png'
-				},
-				{ z: 1, grow: 1, origin : 'top right',
-				 X : 150-50, Y : -150-50,
-				url : 'http://jrlherm.com/webdoc/photos/img_fonds_marins.png'
-				},
-				{ z: 1, grow: 1, origin : 'bottom left',
-				 X : -150-50, Y : 150-50,
-				url : 'http://jrlherm.com/webdoc/photos/img_grenouille.png'
-				},
-				{ z: 1, grow: 1, origin : 'top left',
-				 X : -150-50, Y : -150-50,
-				url : 'http://jrlherm.com/webdoc/photos/img_tubes_a_essais.png'
-				},
-				{ z: 1, grow: 1, origin : 'bottom right',
-				 X : 150-50, Y : 150-50,
-				url : 'http://jrlherm.com/webdoc/photos/img_usine.png'
+				url : 'http://jrlherm.com/webdoc/photos/img_cellules.png',
+				theclass : 'img1'
 				},
 			],
     }
@@ -52,7 +67,7 @@ export default {
 				this.cloudImages[i].grow = 1
 				this.cloudImages[i].z = 1
 			}
-			this.cloudImages[index].grow = 2
+			this.cloudImages[index].grow = 1.5
 			this.cloudImages[index].z = 2
 			this.currentIndex = index
 		},
@@ -70,36 +85,63 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+a {
+	position: absolute;
+}
 .container{
 	display: flex;
-	flex-flow: row wrap;
-	justify-content: space-around;
+	/* flex-flow: row wrap;*/
+	/* justify-content: space-around; */
 	align-items: center;
 	width: 100%;
 	height: 100%;
-
+	background-image: url('../assets/images/bg_home.png');
 	background-color: white;
 	.cloud-images{
-		flex: 1 1;
-		background-color: red;
-		min-width: 400px;
-		min-height: 400px;
+		/*flex: 1 1;*/
+		/* background-color: red; */
+		width: 50vw;
+		height: 40vh;
 		position: relative;
 		.cloud-image{
 			position: absolute;
-			left: 45%;
+			/*left: 45%;
 			top: 50%;
-			transition: all .2s ease-in;
-			width: 150px;
+			transition: all .2s ease-in; */
+			width: 200px;
 			cursor: pointer;
+			transition: all 0.3s ease;
 		}
 	}
 	.description{
-		flex: 1 1;
-		min-width: 400px;
-		min-height: 400px;
+		/* flex: 1 1; */
+		width: 30vw;
+		height: 40vh;
 		padding: 50px;
-		background-color: grey;
+		/* background-color: grey; */
+		font-family: "Lora", serif;
+		font-size: 1.2rem;
+	}
+
+	.img1{
+		bottom: -75%;
+		right: 5%;
+	}
+	.img2{
+		bottom: -45%;
+		right: 12%;
+	}
+	.img3{
+		top: -45%;
+		right: -5%;
+	}
+	.img4{
+		top: 90%;
+		left: 55%;
+	}
+	.img5{
+		bottom: 5%;
+		right: 55%;
 	}
 }
 </style>

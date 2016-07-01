@@ -102,7 +102,7 @@ export default {
     color: white;
   }
 h1{
-    padding-top: 20%;
+    padding-top: 16%;
     text-align: center;
     font-size: 3.5rem;
   }
