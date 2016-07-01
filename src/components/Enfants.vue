@@ -15,7 +15,7 @@
         <polyline class="beat" points="0 33.57 575 33.57 585 3.57 595 43.57 600 33.57 1280 33.57"/>
       </svg>
     </div>
-     <audioplayer src="http://jrlherm.com/webdoc/audio/intro_part1.mp3"></audioplayer>
+     <audioplayer src="http://jrlherm.com/webdoc/audio/intro_part1.mp3" next="dommage"></audioplayer>
   </div>
 </template>
 
@@ -114,7 +114,7 @@ svg.svg-line{
 .grow{
   opacity: 1;
   transform: scale(2.5);
-  
+
 }
 
 .fade-transition {

@@ -1,6 +1,6 @@
 <template lang="html">
 	<div class="content" transition="fade">
-		<video class="intro-video" preload="auto">
+		<video class="intro-video" preload="auto" autoplay>
 			<source src="http://jrlherm.com/webdoc/videos/experiment.mp4" type="video/mp4">
 		</video>
 		<img class="play_button" v-bind:src="play_or_pause" alt="#" v-on:click="play"/>
@@ -13,6 +13,7 @@
 </template>
 
 <script scoped>
+import VueRouter from 'vue-router'
 export default {
   data () {
     return {
@@ -53,6 +54,10 @@ export default {
 			// Update position of the line
 			line.style.transform = `translateX(${percent}%)`
 		},100);
+		let router = new VueRouter()
+		player.onended= function(){
+			router.go({path:`/chiffres_chimique`})
+		}
 
 	}
 }

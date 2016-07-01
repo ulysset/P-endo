@@ -1,7 +1,7 @@
 <template>
   <audio class="intro-audio" v-bind:src="src" autoplay type="audio/mpeg"></audio>
   <div class="all_time">
-    <img class="play_button" v-bind:src="play_or_pause" alt="#" v-on:click="play"/>
+    <img class="play_button" v-bind:src="play_or_pause" alt="Play or Pause Sound" v-on:click="play"/>
     <div class="timeline" v-on:click="changeTime">
       <div class="progress-bar"></div>
     </div>
@@ -9,28 +9,32 @@
 </template>
 
 <script scoped>
+import VueRouter from 'vue-router'
+
 export default {
   data: function () {
     return {
       play_or_pause: 'http://jrlherm.com/webdoc/svg/pause.svg'
     }
   },
-  props: ['src'],
+  props: ['src', 'next'],
   ready() {
 		let bar = document.querySelector('.progress-bar')
 		let player = document.querySelector('.intro-audio')
     player.currentTime = 0
+    let router = new VueRouter()
+    let next = this.next
+    player.addEventListener('ended', nextPage, false);
+    function nextPage(){
+      router.go({path:`/${next}`})
+      player.currentTime = 0
+    }
 		// Cursor position
 		window.setInterval(function(){
 			// Count the percentage passed
 			let percent = (player.currentTime / player.duration) * 100
-      /*console.log(percent);*/
 			// Update position of the line
-
 			bar.style.transform = `translateX(${percent}%)`
-      if (player.currentTime >= player.duration){
-        /*this.$route.router.go('/')*/
-      }
 		},100);
 	},
   methods : {

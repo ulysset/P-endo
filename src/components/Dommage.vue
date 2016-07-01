@@ -7,12 +7,14 @@
   		<a v-link="{ path: '/video_intro'}"></a>
   		<audioplayer src="http://jrlherm.com/webdoc/audio/intro_part2.mp3"></audioplayer>
 	</div>
-	
-  
+
+
 </template>
 
 <script scoped>
 import Vue from 'vue'
+import VueRouter from 'vue-router'
+
 Vue.component('audioplayer', require('./audioPlayer'))
 export default {
 	data(){
@@ -20,14 +22,10 @@ export default {
 	},
 	ready() {
 		let the_audio = document.querySelector('audio');
-		window.setInterval(function(){
-      		if (the_audio.currentTime >= the_audio.duration){
-      			/*console.log(this.$route);
-	        	this.router.go('/')*/
-	        	/*this.$route.router.go('/')*/
-	        	this.$route.router.redirect('/video_intro')
-	      }
-		},100);
+		let router = new VueRouter()
+		the_audio.onended= function(){
+			router.go({path:`/video_intro`})
+		}
 	},
 	methods: {
 	}

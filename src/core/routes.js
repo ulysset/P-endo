@@ -13,6 +13,7 @@ router.map({
     component: require('components/Enfants.vue')
   },
   '/dommage': {
+    name: 'dommage',
     component: require('components/Dommage.vue')
   },
   '/maladies': {
